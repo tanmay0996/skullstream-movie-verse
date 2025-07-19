@@ -7,6 +7,7 @@ const HeroBanner = () => {
 
   if (isLoading) return <div className="text-white text-xl">Loading...</div>;
   if (error) return <div className="text-red-500">Failed to load featured movie.</div>;
+  if (!movie) return <div className="text-white text-xl">No movie data available.</div>;
 
   return (
     <div
