@@ -21,11 +21,12 @@ const Index = () => {
     <div className="bg-black min-h-screen">
       <HeroBanner />
 
-      <MovieCarousel title="Trending Now" movies={trending} />
-      <MovieCarousel title="Top Rated" movies={topRated} />
-      <MovieCarousel title="Upcoming" movies={upcoming} />
-      <MovieCarousel title="Action" movies={action} />
-      <MovieCarousel title="Comedy" movies={comedy} />
+    <MovieCarousel title="Trending Now" category="trending" />
+<MovieCarousel title="Top Rated" category="top_rated" />
+<MovieCarousel title="Upcoming" category="upcoming" />
+<MovieCarousel title="Action" category="action" />
+<MovieCarousel title="Comedy" category="comedy" />
+
     </div>
   );
 };
