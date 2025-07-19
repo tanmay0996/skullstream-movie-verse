@@ -1,35 +1,31 @@
+// src/pages/Index.tsx
 import React from 'react';
-import Navigation from '@/components/Navigation';
-import HeroBanner from '@/components/HeroBanner';
-import MovieCarousel from '@/components/MovieCarousel';
-import { sampleMovies, trendingMovies } from '@/data/movieData';
+import HeroBanner from '../components/HeroBanner';
+import MovieCarousel from '../components/MovieCarousel';
+import {
+  useTrendingMovies,
+  useTopRatedMovies,
+  useUpcomingMovies,
+  useActionMovies,
+  useComedyMovies
+} from '../hooks/useMovies';
 
 const Index = () => {
+  const { data: trending = [] } = useTrendingMovies();
+  const { data: topRated = [] } = useTopRatedMovies();
+  const { data: upcoming = [] } = useUpcomingMovies();
+  const { data: action = [] } = useActionMovies();
+  const { data: comedy = [] } = useComedyMovies();
+
   return (
-    <div className="min-h-screen bg-background">
-      {/* Navigation */}
-      <Navigation />
-      
-      {/* Hero Banner */}
+    <div className="bg-black min-h-screen">
       <HeroBanner />
-      
-      {/* Movie Carousels */}
-      <div className="space-y-12 pb-16">
-        <MovieCarousel 
-          title="NEW RELEASES" 
-          movies={sampleMovies} 
-        />
-        
-        <MovieCarousel 
-          title="TRENDING NOW" 
-          movies={trendingMovies} 
-        />
-        
-        <MovieCarousel 
-          title="RECOMMENDED FOR YOU" 
-          movies={[...sampleMovies].reverse()} 
-        />
-      </div>
+
+      <MovieCarousel title="Trending Now" movies={trending} />
+      <MovieCarousel title="Top Rated" movies={topRated} />
+      <MovieCarousel title="Upcoming" movies={upcoming} />
+      <MovieCarousel title="Action" movies={action} />
+      <MovieCarousel title="Comedy" movies={comedy} />
     </div>
   );
 };
