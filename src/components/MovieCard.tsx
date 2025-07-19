@@ -1,4 +1,7 @@
+
+//Fixed position expandable hover card with interactive content
 import React, { useState } from "react";
+
 
 interface Movie {
   id: number;
