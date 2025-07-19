@@ -7,18 +7,59 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# Dependency directories
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+build/
+out/
+.next/
+coverage/
+
+# Local env files
+.env
+.env.*.local
 *.local
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# System files
 .DS_Store
+Thumbs.db
+
+# Editor folders and files
+.vscode/
+!.vscode/extensions.json
+.idea/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# OS metadata
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# Optional: TypeScript cache
+*.tsbuildinfo
+
+# Optional: npm & yarn
+package-lock.json
+yarn.lock
+.pnpm-debug.log*
+
+# Optional: JetBrains IDEs
+*.iml
+*.ipr
+*.iws
+
+# Optional: VS Code history folder
+.history/
+
+# Optional: TurboRepo
+turbo/
+
+# Optional: Mac and Linux trash
+.Trash-*
