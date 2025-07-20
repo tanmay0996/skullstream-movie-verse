@@ -26,6 +26,18 @@ async function fetchFromTMDB(path, params = {}) {
   }
 }
 
+// Specific route for trending (handles /api/trending/movie/week)
+app.get('/api/trending/:media_type/:time_window', async (req, res) => {
+  try {
+    const { media_type, time_window } = req.params;
+    const data = await fetchFromTMDB(`trending/${media_type}/${time_window}`, req.query);
+    res.json(data);
+  } catch (err) {
+    console.error('🔴 Trending error:', err.message);
+    res.status(500).json({ error: err.message });
+  }
+});
+
 // Specific route (optional)
 app.get('/api/discover/movie', async (req, res) => {
   try {
@@ -45,6 +57,10 @@ app.get('/api/:category/:resource', async (req, res) => {
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
+});
+
+app.listen(PORT, () => {
+  console.log(`🚀 Server running on port ${PORT}`);
 });
 
 module.exports = app;
