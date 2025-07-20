@@ -8,7 +8,16 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+      proxy: {
+      // any call in the browser to /api/* will be forwarded to your Express
+      '/api': {
+        target: 'http://localhost:5000',
+        changeOrigin: true,
+        secure: false,
+      },
+    },
   },
+  build: { outDir: 'dist' },
   plugins: [
     react(),
     mode === 'development' &&
