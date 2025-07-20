@@ -1,15 +1,15 @@
-import { cn } from "@/lib/utils"
+// src/components/ui/skeleton.tsx
+import React from 'react';
 
-function Skeleton({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement>) {
+interface Props extends React.HTMLAttributes<HTMLDivElement> {}
+
+const Skeleton: React.FC<Props> = ({ className, ...props }) => {
   return (
     <div
-      className={cn("animate-pulse rounded-md bg-muted", className)}
+      className={`bg-gray-700 animate-pulse rounded ${className}`}
       {...props}
     />
-  )
-}
+  );
+};
 
-export { Skeleton }
+export default Skeleton;

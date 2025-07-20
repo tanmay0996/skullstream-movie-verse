@@ -9,6 +9,7 @@ import {
   useActionMovies,
   useComedyMovies
 } from '../hooks/useMovies';
+import Navigation from '@/components/Navigation';
 
 const Index = () => {
   const { data: trending = [] } = useTrendingMovies();
@@ -18,7 +19,9 @@ const Index = () => {
   const { data: comedy = [] } = useComedyMovies();
 
   return (
+   
     <div className="bg-black min-h-screen">
+       <Navigation/>
       <HeroBanner />
 
     <MovieCarousel title="Trending Now" category="trending" />

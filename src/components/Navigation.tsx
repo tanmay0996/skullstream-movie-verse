@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 import { 
   Search, 
   Trophy, 
@@ -13,7 +14,7 @@ import {
 
 const Navigation = () => {
   return (
-    <nav className="sticky top-0 z-50 bg-nav-gradient border-b border-white/10 backdrop-blur-lg">
+    <nav className="sticky top-0 z-50 bg-nav-gradient border-b border-white/10 backdrop-blur-lg ">
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           {/* Logo and Main Navigation */}
@@ -37,9 +38,11 @@ const Navigation = () => {
               <Button variant="ghost" className="text-white/80 hover:text-white font-medium">
                 LIVE
               </Button>
+              <Link to="/search">
               <Button variant="ghost" className="text-white/80 hover:text-white font-medium">
                 CATEGORIES
               </Button>
+              </Link>
             </div>
           </div>
 
@@ -47,9 +50,11 @@ const Navigation = () => {
           <div className="flex items-center space-x-4">
             {/* Action Icons */}
             <div className="hidden sm:flex items-center space-x-3">
-              <Button variant="ghost" size="icon" className="text-white/80 hover:text-white">
-                <Search className="h-5 w-5" />
-              </Button>
+             
+  <Button variant="ghost" size="icon" className="text-white/80 hover:text-white">
+    <Search className="h-5 w-5" />
+  </Button>
+
               <Button variant="ghost" size="icon" className="text-white/80 hover:text-white">
                 <Trophy className="h-5 w-5" />
               </Button>
